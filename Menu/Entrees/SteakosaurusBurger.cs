@@ -20,7 +20,7 @@ namespace DinoDiner.Menu.Entrees
             get
             {
                 List<string> ingredients = new List<string>() { "Steakburger Pattie" };
-                if (bun) ingredients.Add("Whole-Wheat Bun");
+                if (bun) ingredients.Add("Whole Wheat Bun");
                 if (pickle) ingredients.Add("Pickle");
                 if (ketchup) ingredients.Add("Ketchup");
                 if (mustard) ingredients.Add("Mustard");
@@ -39,7 +39,7 @@ namespace DinoDiner.Menu.Entrees
             this.bun = false;
         }
 
-        public void HoldPickles()
+        public void HoldPickle()
         {
             this.pickle = false;
         }
