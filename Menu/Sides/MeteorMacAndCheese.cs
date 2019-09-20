@@ -38,7 +38,7 @@ namespace DinoDiner.Menu.Sides
         public MeteorMacAndCheese()
         {
             Price = 0.99;
-            Calories = 352;
+            Calories = 420;
             ingredients.Add("Macaroni Noodles");
             ingredients.Add("Cheese Product");
             ingredients.Add("Pork Sausage");
