@@ -6,6 +6,10 @@ namespace DinoDiner.Menu.Drinks
 {
     public class JurrasicJava : Drink
     {
+        public bool Ice = false;
+        public bool RoomForCream = false;
+        public bool Decaf = false;
+
         private Size size;
 
         public override Size Size
@@ -45,12 +49,13 @@ namespace DinoDiner.Menu.Drinks
 
         public void AddIce()
         {
-
+            Ice = true;
         }
 
         public void LeaveRoomForCream()
         {
-
+            RoomForCream = true;
+            ingredients.Add("Room for Cream");
         }
     }
 }

@@ -17,6 +17,9 @@ namespace DinoDiner.Menu.Drinks
         {
             Price = 1.50;
             Calories = 112;
+            ingredients.Add("Water");
+            ingredients.Add("Natural Flavors");
+            ingredients.Add("Cane Sugar");
         }
 
         private Size size;
@@ -48,5 +51,9 @@ namespace DinoDiner.Menu.Drinks
         }
 
         public bool Ice = true;
+        public void HoldIce()
+        {
+            Ice = false;
+        }
     }
 }

@@ -6,6 +6,9 @@ namespace DinoDiner.Menu.Drinks
 {
     public class Water : Drink
     {
+        public bool Lemon = false;
+        public bool Ice = true;
+
         public Water()
         {
             Price = 0.10;
@@ -15,7 +18,13 @@ namespace DinoDiner.Menu.Drinks
 
         public void AddLemon()
         {
+            Lemon = true;
             ingredients.Add("Lemon");
+        }
+
+        public void HoldIce()
+        {
+            Ice = false;
         }
     }
 }
