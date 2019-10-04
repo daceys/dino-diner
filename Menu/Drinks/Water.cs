@@ -26,5 +26,14 @@ namespace DinoDiner.Menu
         {
             Ice = false;
         }
+
+        /// <summary>
+        /// Method to override the ToString method
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            return Size + " Water";
+        }
     }
 }

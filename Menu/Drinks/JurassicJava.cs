@@ -4,14 +4,20 @@ using System.Text;
 
 namespace DinoDiner.Menu
 {
-    public class JurrasicJava : Drink
+    public class JurassicJava : Drink
     {
         public bool Ice = false;
         public bool RoomForCream = false;
         public bool Decaf = false;
 
+        /// <summary>
+        /// Holds the value for size
+        /// </summary>
         private Size size;
 
+        /// <summary>
+        /// Determines size and sets the price and calories for each
+        /// </summary>
         public override Size Size
         {
             set
@@ -39,7 +45,7 @@ namespace DinoDiner.Menu
             }
         }
 
-        public JurrasicJava()
+        public JurassicJava()
         {
             Price = 0.59;
             Calories = 2;
@@ -56,6 +62,16 @@ namespace DinoDiner.Menu
         {
             RoomForCream = true;
             ingredients.Add("Room for Cream");
+        }
+
+        /// <summary>
+        /// Method to override the ToString method
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            if (Decaf) return size + " Decaf Jurassic Java";
+            return size + " Jurassic Java";
         }
     }
 }

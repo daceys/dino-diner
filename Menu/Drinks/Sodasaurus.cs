@@ -22,7 +22,14 @@ namespace DinoDiner.Menu
             ingredients.Add("Cane Sugar");
         }
 
+        
+        /// <summary>
+        /// Holds the value for size
+        /// </summary>
         private Size size;
+        /// <summary>
+        /// Determines size and sets the price and calories for each
+        /// </summary>
         public Size Size
         {
             get
@@ -54,6 +61,15 @@ namespace DinoDiner.Menu
         public void HoldIce()
         {
             Ice = false;
+        }
+
+        /// <summary>
+        /// Method to override the ToString method
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            return size + " " + flavor + " Sodasaurus";
         }
     }
 }

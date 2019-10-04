@@ -5,9 +5,9 @@ using DinoDiner.Menu;
 
 namespace DinoDiner.Menu
 {
-    public class CretaceousCombo
+    public class CretaceousCombo : IMenuItem
     {
-        public EntreeBase Entree { get; set; }
+        public Entree Entree { get; set; }
 
         private Side side;
         public Side Side
@@ -56,11 +56,20 @@ namespace DinoDiner.Menu
             }
         }
 
-        public CretaceousCombo(EntreeBase entree)
+        public CretaceousCombo(Entree entree)
         {
             Entree = entree;
             Side = new Fryceritops();
             Drink = new Sodasaurus();
+        }
+
+        /// <summary>
+        /// Method to override the ToString method
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            return Entree + " Combo"; 
         }
 
     }

@@ -10,7 +10,13 @@ namespace DinoDiner.Menu
         public bool Lemon = false;
         public bool Ice = true;
 
+        /// <summary>
+        /// Holds the value for size
+        /// </summary>
         private Size size;
+        /// <summary>
+        /// Determines size and sets the price and calories for each
+        /// </summary>
         public override Size Size
         {
             set
@@ -63,6 +69,16 @@ namespace DinoDiner.Menu
         {
             Sweet = true;
             ingredients.Add("Cane Sugar");
+        }
+
+        /// <summary>
+        /// Method to override the ToString method
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            if (Sweet) return size + " Sweet Tyrannotea";
+            return size + " Tyrannotea";
         }
     }
 }

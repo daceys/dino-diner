@@ -4,7 +4,7 @@ using System.Text;
 
 namespace DinoDiner.Menu
 {
-    public class SteakosaurusBurger : EntreeBase
+    public class SteakosaurusBurger : Entree
     {
         public SteakosaurusBurger()
         {
@@ -35,6 +35,15 @@ namespace DinoDiner.Menu
         public void HoldMustard()
         {
             ingredients.Remove("Mustard");
+        }
+
+        /// <summary>
+        /// Method to override the ToString method
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            return "Steakosaurus Burger";
         }
     }
 }

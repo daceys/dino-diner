@@ -6,8 +6,14 @@ namespace DinoDiner.Menu
 {
     public class Triceritots : Side
     {
+        /// <summary>
+        /// Holds the value for size
+        /// </summary>
         private Size size;
 
+        /// <summary>
+        /// Determines size and sets the price and calories for each
+        /// </summary>
         public override Size Size
         {
             set
@@ -35,6 +41,9 @@ namespace DinoDiner.Menu
             }
         }
 
+        /// <summary>
+        /// Constructor that creates triceritots
+        /// </summary>
         public Triceritots()
         {
             Price = 0.99;
@@ -42,6 +51,15 @@ namespace DinoDiner.Menu
             ingredients.Add("Potato");
             ingredients.Add("Salt");
             ingredients.Add("Vegetable Oil");
+        }
+
+        /// <summary>
+        /// Method to override the ToString method
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            return size + " Triceritots";
         }
     }
 }

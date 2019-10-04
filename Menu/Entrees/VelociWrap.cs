@@ -4,7 +4,7 @@ using System.Text;
 
 namespace DinoDiner.Menu
 {
-    public class VelociWrap : EntreeBase
+    public class VelociWrap : Entree
     {
         public VelociWrap()
         {
@@ -30,6 +30,15 @@ namespace DinoDiner.Menu
         public void HoldCheese()
         {
             ingredients.Remove("Parmesan Cheese");
+        }
+
+        /// <summary>
+        /// Method to override the ToString method
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            return "Veloci-Wrap";
         }
     }
 }

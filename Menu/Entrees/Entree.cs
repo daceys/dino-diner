@@ -4,7 +4,7 @@ using System.Text;
 
 namespace DinoDiner.Menu
 {
-    public abstract class EntreeBase
+    public abstract class Entree : IMenuItem
     {
         protected List<string> ingredients = new List<string>();
 
@@ -14,7 +14,13 @@ namespace DinoDiner.Menu
 
         public List<string> Ingredients
         {
-            get { return ingredients; }
+            get
+            {
+                string [] s = ingredients.ToArray();
+                List<string> i = new List<string>(s);
+                return i;
+            }
         }
+
     }
 }

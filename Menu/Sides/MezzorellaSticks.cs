@@ -6,8 +6,14 @@ namespace DinoDiner.Menu
 {
     public class MezzorellaSticks : Side
     {
+        /// <summary>
+        /// Holds the value for size
+        /// </summary>
         private Size size;
 
+        /// <summary>
+        /// Determines size and sets the price and calories for each
+        /// </summary>
         public override Size Size
         {
             set
@@ -43,5 +49,15 @@ namespace DinoDiner.Menu
             ingredients.Add("Cheese Product");
             ingredients.Add("Vegetable Oil");
         }
+
+        /// <summary>
+        /// Method to override the ToString method
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            return size + " Mezzorella Sticks";
+        }
+
     }
 }

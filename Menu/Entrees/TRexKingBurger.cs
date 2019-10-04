@@ -4,7 +4,7 @@ using System.Text;
 
 namespace DinoDiner.Menu
 {
-    public class TRexKingBurger : EntreeBase
+    public class TRexKingBurger : Entree
     {
         public TRexKingBurger()
         {
@@ -61,6 +61,15 @@ namespace DinoDiner.Menu
         public void HoldMayo()
         {
             ingredients.Remove("Mayo");
+        }
+
+        /// <summary>
+        /// Method to override the ToString method
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            return "T-Rex King Burger";
         }
     }
 }

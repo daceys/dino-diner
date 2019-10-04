@@ -2,7 +2,7 @@
 
 namespace DinoDiner.Menu
 {
-    public class PrehistoricPBJ : EntreeBase
+    public class PrehistoricPBJ : Entree
     {
         public PrehistoricPBJ()
         {
@@ -23,5 +23,13 @@ namespace DinoDiner.Menu
             ingredients.Remove("Jelly");
         }
 
+        /// <summary>
+        /// Method to override the ToString method
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            return "Prehistoric PB&J";
+        }
     }
 }
