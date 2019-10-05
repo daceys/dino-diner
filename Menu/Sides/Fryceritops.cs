@@ -1,9 +1,15 @@
-﻿using System;
+﻿/* Fryceritops.cs
+ * Author: Dacey Simpson
+ */
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace DinoDiner.Menu
 {
+    /// <summary>
+    /// Class for the fryceritops side
+    /// </summary>
     public class Fryceritops : Side
     {
         /// <summary>
@@ -41,6 +47,9 @@ namespace DinoDiner.Menu
             }
         }
 
+        /// <summary>
+        /// Constructor for the creation of the fries
+        /// </summary>
         public Fryceritops()
         {
             Price = 0.99;

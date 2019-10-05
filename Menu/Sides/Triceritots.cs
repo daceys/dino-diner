@@ -1,9 +1,15 @@
-﻿using System;
+﻿/* Triceritots.cs
+ * Author: Dacey Simpson
+ */
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace DinoDiner.Menu
 {
+    /// <summary>
+    /// Class for the triceritots side
+    /// </summary>
     public class Triceritots : Side
     {
         /// <summary>

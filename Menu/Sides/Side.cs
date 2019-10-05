@@ -1,12 +1,22 @@
-﻿using System;
+﻿/* Side.cs
+ * Author: Dacey Simpson
+ */
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace DinoDiner.Menu
 {
+    /// <summary>
+    /// Base class for the sides
+    /// </summary>
     public abstract class Side : IMenuItem
     {
+        /// <summary>
+        /// Holds the list of ingredients
+        /// </summary>
         protected List<string> ingredients = new List<string>();
+        
         /// <summary>
         /// Gets and sets the price
         /// </summary>

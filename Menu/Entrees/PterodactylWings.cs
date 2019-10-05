@@ -1,11 +1,20 @@
-﻿using System;
+﻿/*PterodactylWings.cs
+ * Author: Dacey Simpson
+ */
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace DinoDiner.Menu
 {
+    /// <summary>
+    /// Class for the pterodactyl wings entree
+    /// </summary>
     public class PterodactylWings : Entree
     {
+        /// <summary>
+        /// Constructor for creation of the wings
+        /// </summary>
         public PterodactylWings()
         {
             Price = 7.21;

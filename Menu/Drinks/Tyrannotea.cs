@@ -1,11 +1,20 @@
-﻿using System;
+﻿/* Tyrannotea.cs
+ * Author: Dacey Simpson
+ */
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace DinoDiner.Menu
 {
+    /// <summary>
+    /// Class for the tyrannotea drink
+    /// </summary>
     public class Tyrannotea : Drink
     {
+        /// <summary>
+        /// Fields for sweet tea, lemon, and ice
+        /// </summary>
         public bool Sweet = false;
         public bool Lemon = false;
         public bool Ice = true;
@@ -47,6 +56,9 @@ namespace DinoDiner.Menu
             }
         } 
 
+        /// <summary>
+        /// Constructor for creation of the tyrannotea drink
+        /// </summary>
         public Tyrannotea()
         {
             Price = 0.99;
@@ -55,16 +67,26 @@ namespace DinoDiner.Menu
             ingredients.Add("Tea");
         }
 
+        /// <summary>
+        /// Method to Add Lemon to the drink
+        /// </summary>
         public void AddLemon()
         {
             Lemon = true;
             ingredients.Add("Lemon");
         }
 
+        /// <summary>
+        /// Method to hold ice 
+        /// </summary>
         public void HoldIce()
         {
             Ice = false;
         }
+
+        /// <summary>
+        /// Method to make tyrannotea a sweet tea
+        /// </summary>
         public void AddSweet()
         {
             Sweet = true;

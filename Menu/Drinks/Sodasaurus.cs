@@ -1,18 +1,33 @@
-﻿using System;
+﻿/* Sodasaurus.cs
+ * Author: Dacey Simpson
+ */
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace DinoDiner.Menu
 {
+    /// <summary>
+    /// Class for Sodasaurus drink
+    /// </summary
     public class Sodasaurus : Drink
     {
+        /// <summary>
+        /// Field to hold sodasaurus flavors
+        /// </summary>
         private SodasaurusFlavor flavor;
+        /// <summary>
+        /// Property to get and set the flavor
+        /// </summary>
         public SodasaurusFlavor Flavor
         {
             get { return flavor; }
             set { flavor = value; }
         }
 
+        /// <summary>
+        /// Constructor to create a sodasaurus drink
+        /// </summary>
         public Sodasaurus()
         {
             Price = 1.50;
@@ -21,7 +36,6 @@ namespace DinoDiner.Menu
             ingredients.Add("Natural Flavors");
             ingredients.Add("Cane Sugar");
         }
-
         
         /// <summary>
         /// Holds the value for size
@@ -57,7 +71,13 @@ namespace DinoDiner.Menu
             }
         }
 
+        /// <summary>
+        /// field to determine presence of ice
+        /// </summary>
         public bool Ice = true;
+        /// <summary>
+        /// Method to hold ice from the drink
+        /// </summary>
         public void HoldIce()
         {
             Ice = false;

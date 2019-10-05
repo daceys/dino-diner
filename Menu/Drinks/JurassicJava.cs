@@ -1,11 +1,20 @@
-﻿using System;
+﻿/* JurassicJava.cs
+ * Author: Dacey Simpson
+ */
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace DinoDiner.Menu
 {
+    /// <summary>
+    /// Class for Jurassic Java drink
+    /// </summary>
     public class JurassicJava : Drink
     {
+        /// <summary>
+        /// Sets fields for ice, room for cream, and decaf
+        /// </summary>
         public bool Ice = false;
         public bool RoomForCream = false;
         public bool Decaf = false;
@@ -45,6 +54,9 @@ namespace DinoDiner.Menu
             }
         }
 
+        /// <summary>
+        /// Constructor for creation of the jurassic java
+        /// </summary>
         public JurassicJava()
         {
             Price = 0.59;
@@ -53,11 +65,17 @@ namespace DinoDiner.Menu
             ingredients.Add("Coffee");
         }
 
+        /// <summary>
+        /// Method to add ice
+        /// </summary>
         public void AddIce()
         {
             Ice = true;
         }
 
+        /// <summary>
+        /// Method to leave room for cream
+        /// </summary>
         public void LeaveRoomForCream()
         {
             RoomForCream = true;

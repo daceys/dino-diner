@@ -1,9 +1,15 @@
-﻿using System;
+﻿/* MeteorMacAndCheese.cs
+ * Author: Dacey Simpson
+ */
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace DinoDiner.Menu
 {
+    /// <summary>
+    /// Class for the meteor mac and cheese side
+    /// </summary>
     public class MeteorMacAndCheese : Side
     {
         /// <summary>
@@ -41,6 +47,9 @@ namespace DinoDiner.Menu
             }
         }
 
+        /// <summary>
+        /// Constructor for the creation of the mac and cheese
+        /// </summary>
         public MeteorMacAndCheese()
         {
             Price = 0.99;

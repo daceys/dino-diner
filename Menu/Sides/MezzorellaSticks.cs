@@ -1,9 +1,15 @@
-﻿using System;
+﻿/* MezzorellaSticks.cs
+ * Author: Dacey Simpson
+ */
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace DinoDiner.Menu
 {
+    /// <summary>
+    /// Class for the mezzorella sticks
+    /// </summary>
     public class MezzorellaSticks : Side
     {
         /// <summary>
@@ -41,6 +47,9 @@ namespace DinoDiner.Menu
             }
         }
 
+        /// <summary>
+        /// Constructor for the creation of the cheese sticks
+        /// </summary>
         public MezzorellaSticks()
         {
             Price = 0.99;

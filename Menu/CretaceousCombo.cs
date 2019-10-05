@@ -1,15 +1,30 @@
-﻿using System;
+﻿/* CretaceousCombo.cs
+ * Author: Dacey Simpson
+ */
+using System;
 using System.Collections.Generic;
 using System.Text;
 using DinoDiner.Menu;
 
 namespace DinoDiner.Menu
 {
+    /// <summary>
+    /// Class for the combos
+    /// </summary>
     public class CretaceousCombo : IMenuItem
     {
+        /// <summary>
+        /// Get and set the entrees
+        /// </summary>
         public Entree Entree { get; set; }
 
+        /// <summary>
+        /// Hold the side
+        /// </summary>
         private Side side;
+        /// <summary>
+        /// Get and set the side
+        /// </summary>
         public Side Side
         {
             get { return side; }
@@ -20,19 +35,34 @@ namespace DinoDiner.Menu
             }
         }
 
+        /// <summary>
+        /// Get and set the drink
+        /// </summary>
         public Drink Drink { get; set; }
 
+        /// <summary>
+        /// Get the price for the combo
+        /// </summary>
         public double Price
         {
             get { return Entree.Price + Side.Price + Drink.Price - 0.25; }
         }
 
+        /// <summary>
+        /// Get the calories for the combo
+        /// </summary>
         public uint Calories
         {
             get { return Entree.Calories + Side.Calories + Drink.Calories; }
         }
 
+        /// <summary>
+        /// Set the default size to small
+        /// </summary>
         private Size size = Size.Small;
+        /// <summary>
+        /// Get and return the size of drink and the side
+        /// </summary>
         public Size Size
         {
             get { return size; }
@@ -44,6 +74,9 @@ namespace DinoDiner.Menu
             }
         }
 
+        /// <summary>
+        /// Get the list of ingredients for the combo
+        /// </summary>
         public List<string> Ingredients
         {
             get
@@ -56,6 +89,10 @@ namespace DinoDiner.Menu
             }
         }
 
+        /// <summary>
+        /// Constructor for the creation of a combo
+        /// </summary>
+        /// <param name="entree"> the kind of entree </param>
         public CretaceousCombo(Entree entree)
         {
             Entree = entree;

@@ -1,4 +1,7 @@
-﻿using System;
+﻿/* JurrasicJavaTest.cs
+ * Author: Dacey Simpson
+ */
+using System;
 using System.Collections.Generic;
 using System.Text;
 using DinoDiner.Menu;

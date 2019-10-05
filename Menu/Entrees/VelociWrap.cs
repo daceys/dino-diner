@@ -1,11 +1,20 @@
-﻿using System;
+﻿/* VelociWrap.cs
+ * Author: Dacey Simpson
+ */
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace DinoDiner.Menu
 {
+    /// <summary>
+    /// Class for the veloci wrap entree
+    /// </summary>
     public class VelociWrap : Entree
     {
+        /// <summary>
+        /// Constructor for the creation of the wrap
+        /// </summary>
         public VelociWrap()
         {
             Price = 6.86;
@@ -17,16 +26,25 @@ namespace DinoDiner.Menu
             ingredients.Add("Parmesan Cheese");
         }
 
+        /// <summary>
+        /// Method to hold the dressing
+        /// </summary>
         public void HoldDressing()
         {
             ingredients.Remove("Ceasar Dressing");
         }
 
+        /// <summary>
+        /// Method to hold the lettuce
+        /// </summary>
         public void HoldLettuce()
         {
             ingredients.Remove("Romain Lettuce");
         }
 
+        /// <summary>
+        /// Method to hold the cheese
+        /// </summary>
         public void HoldCheese()
         {
             ingredients.Remove("Parmesan Cheese");

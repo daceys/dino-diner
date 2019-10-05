@@ -1,9 +1,18 @@
-﻿using System.Collections.Generic;
+﻿/*PrehistoricPBJ.cs
+ * Modified by: Dacey Simpson
+ */
+using System.Collections.Generic;
 
 namespace DinoDiner.Menu
 {
+    /// <summary>
+    /// Class for the pb and j entree
+    /// </summary>
     public class PrehistoricPBJ : Entree
     {
+        /// <summary>
+        /// Constructor for creation of the pb and j
+        /// </summary>
         public PrehistoricPBJ()
         {
             Price = 6.52;
@@ -13,11 +22,17 @@ namespace DinoDiner.Menu
             ingredients.Add("Jelly");
         }
 
+        /// <summary>
+        /// Method to hold the peanut butter
+        /// </summary>
         public void HoldPeanutButter()
         {
             ingredients.Remove("Peanut Butter");
         }
 
+        /// <summary>
+        /// Method to hold the jelly
+        /// </summary>
         public void HoldJelly()
         {
             ingredients.Remove("Jelly");
