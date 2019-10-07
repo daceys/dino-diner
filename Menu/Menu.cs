@@ -30,11 +30,11 @@ namespace DinoDiner.Menu
         /// <summary>
         /// List with all the available menu items
         /// </summary>
-        public List<Menu> AvailableMenuItems
+        public List<IMenuItem> AvailableMenuItems
         {
             get
             {
-                List<Menu> menu = new List<Menu>();
+                List<IMenuItem> menu = new List<IMenuItem>();
                 menu.Add(new Brontowurst());
                 menu.Add(new DinoNuggets());
                 menu.Add(new PrehistoricPBJ());
@@ -113,13 +113,13 @@ namespace DinoDiner.Menu
             get
             {
                 List<CretaceousCombo> combo = new List<CretaceousCombo>();
-                combo.Add(new CretaceousCombo(Brontowurst));
-                combo.Add(new CretaceousCombo(DinoNuggets));
-                combo.Add(new CretaceousCombo(PrehistoricPBJ));
-                combo.Add(new CretaceousCombo(PterodactylWings));
-                combo.Add(new CretaceousCombo(SteakosaurusBurger));
-                combo.Add(new CretaceousCombo(TRexKingBurger));
-                combo.Add(new CretaceousCombo(VelociWrap));
+                combo.Add(new CretaceousCombo(new Brontowurst()));
+                combo.Add(new CretaceousCombo(new DinoNuggets()));
+                combo.Add(new CretaceousCombo(new PrehistoricPBJ()));
+                combo.Add(new CretaceousCombo(new PterodactylWings()));
+                combo.Add(new CretaceousCombo(new SteakosaurusBurger()));
+                combo.Add(new CretaceousCombo(new TRexKingBurger()));
+                combo.Add(new CretaceousCombo(new VelociWrap()));
                 return combo;
             }
         }
