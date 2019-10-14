@@ -11,7 +11,7 @@
     <WrapPanel>
         <WrapPanel.Resources>
             <Style TargetType="Button">
-                <Setter Property="MinWidth" Value="110"/>
+                <Setter Property="MinWidth" Value="115"/>
                 <Setter Property="MinHeight" Value="110"/>
                 <Setter Property="Margin" Value="10"/>
             </Style>            

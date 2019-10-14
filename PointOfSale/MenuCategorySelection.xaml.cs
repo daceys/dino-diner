@@ -1,4 +1,7 @@
-﻿using System;
+﻿/* MenuCategorySelection.xaml.cs
+ * Author: Dacey Simpson
+ */
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
