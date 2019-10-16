@@ -10,7 +10,7 @@ namespace DinoDiner.Menu
     /// <summary>
     /// Class for the fryceritops side
     /// </summary>
-    public class Fryceritops : Side
+    public class Fryceritops : Side, IOrderItem
     {
         /// <summary>
         /// Holds the value for size
@@ -66,6 +66,20 @@ namespace DinoDiner.Menu
         public override string ToString()
         {
             return size + " Friceritops";
+        }
+
+        public override string Description
+        {
+            get { return this.ToString(); }
+        }
+
+        public override string[] Special
+        {
+            get
+            {
+                List<string> special = new List<string>();
+                return special.ToArray();
+            }
         }
     }
 }

@@ -4,14 +4,25 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 
 namespace DinoDiner.Menu
 {
     /// <summary>
     /// Base class for drinks
     /// </summary>
-    public abstract class Drink : IMenuItem
+    public abstract class Drink : IMenuItem, IOrderItem, INotifyPropertyChanged
     {
+        /// <summary>
+        /// Event handler for when a property changes
+        /// </summary>
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        protected void NotifyOfPropertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
         /// <summary>
         /// Creates a list to hold ingredients
         /// </summary>
@@ -44,5 +55,9 @@ namespace DinoDiner.Menu
                 return i;
             }
         }
+
+        public virtual string Description { get; }
+
+        public virtual string[] Special { get; }
     }
 }
