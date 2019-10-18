@@ -1,4 +1,7 @@
-﻿using System.Collections.Generic;
+﻿/* PterodactylWingsTest.cs
+ * Modified by: Dacey Simpson
+ */
+using System.Collections.Generic;
 using Xunit;
 using DinoDiner.Menu;
 
@@ -30,5 +33,18 @@ namespace MenuTest.Entrees
             Assert.Equal<int>(2, ingredients.Count);
         }
 
+        [Fact]
+        public void DescriptionShouldBeCorrect()
+        {
+            PterodactylWings pw = new PterodactylWings();
+            Assert.Equal("Pterodactyl Wings", pw.Description);
+        }
+
+        [Fact]
+        public void SpecialShouldBeEmpty()
+        {
+            PterodactylWings pw = new PterodactylWings();
+            Assert.Empty(pw.Special);
+        }
     }
 }

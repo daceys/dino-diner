@@ -4,13 +4,14 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 
 namespace DinoDiner.Menu
 {
     /// <summary>
     /// Class for water
     /// </summary>
-    public class Water : Drink
+    public class Water : Drink, IOrderItem, INotifyPropertyChanged
     {
         /// <summary>
         /// Fields for the presence of lemon and ice
@@ -35,6 +36,8 @@ namespace DinoDiner.Menu
         {
             Lemon = true;
             ingredients.Add("Lemon");
+            NotifyOfPropertyChanged("Ingredients");
+            NotifyOfPropertyChanged("Special");
         }
 
         /// <summary>
@@ -43,6 +46,7 @@ namespace DinoDiner.Menu
         public void HoldIce()
         {
             Ice = false;
+            NotifyOfPropertyChanged("Special");
         }
 
         /// <summary>
@@ -52,6 +56,28 @@ namespace DinoDiner.Menu
         public override string ToString()
         {
             return Size + " Water";
+        }
+
+        /// <summary>
+        /// gets the description for fryceritops
+        /// </summary>
+        public override string Description
+        {
+            get { return this.ToString(); }
+        }
+
+        /// <summary>
+        /// gets the specials for the fryceritops
+        /// </summary>
+        public override string[] Special
+        {
+            get
+            {
+                List<string> special = new List<string>();
+                if (Lemon) special.Add("Add Lemon");
+                if (!Ice) special.Add("Hold Ice");
+                return special.ToArray();
+            }
         }
     }
 }

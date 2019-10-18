@@ -4,13 +4,14 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 
 namespace DinoDiner.Menu
 {
     /// <summary>
     /// Class for the tyrannotea drink
     /// </summary>
-    public class Tyrannotea : Drink
+    public class Tyrannotea : Drink, IOrderItem, INotifyPropertyChanged
     {
         /// <summary>
         /// Fields for sweet tea, lemon, and ice
@@ -49,6 +50,9 @@ namespace DinoDiner.Menu
                         if (Sweet == true) Calories = 64;
                         break;
                 }
+                NotifyOfPropertyChanged("Price");
+                NotifyOfPropertyChanged("Calories");
+                NotifyOfPropertyChanged("Description");
             }
             get
             {
@@ -74,6 +78,8 @@ namespace DinoDiner.Menu
         {
             Lemon = true;
             ingredients.Add("Lemon");
+            NotifyOfPropertyChanged("Special");
+            NotifyOfPropertyChanged("Ingredients");
         }
 
         /// <summary>
@@ -101,6 +107,28 @@ namespace DinoDiner.Menu
         {
             if (Sweet) return size + " Sweet Tyrannotea";
             return size + " Tyrannotea";
+        }
+
+        /// <summary>
+        /// gets the description for fryceritops
+        /// </summary>
+        public override string Description
+        {
+            get { return this.ToString(); }
+        }
+
+        /// <summary>
+        /// gets the specials for the fryceritops
+        /// </summary>
+        public override string[] Special
+        {
+            get
+            {
+                List<string> special = new List<string>();
+                if (Lemon) special.Add("Add Lemon");
+                if (!Ice) special.Add("Hold Ice");
+                return special.ToArray();
+            }
         }
     }
 }

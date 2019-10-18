@@ -4,13 +4,14 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 
 namespace DinoDiner.Menu
 {
     /// <summary>
     /// Class for the meteor mac and cheese side
     /// </summary>
-    public class MeteorMacAndCheese : Side
+    public class MeteorMacAndCheese : Side, IOrderItem, INotifyPropertyChanged
     {
         /// <summary>
         /// Holds the value for size
@@ -40,6 +41,9 @@ namespace DinoDiner.Menu
                         Calories = 520;
                         break;
                 }
+                NotifyOfPropertyChanged("Price");
+                NotifyOfPropertyChanged("Calories");
+                NotifyOfPropertyChanged("Description");
             }
             get
             {
@@ -66,6 +70,26 @@ namespace DinoDiner.Menu
         public override string ToString()
         {
             return size + " Meteor Mac and Cheese";
+        }
+
+        /// <summary>
+        /// gets the description for mac and cheese
+        /// </summary>
+        public override string Description
+        {
+            get { return this.ToString(); }
+        }
+
+        /// <summary>
+        /// gets the specials for the mac and cheese
+        /// </summary>
+        public override string[] Special
+        {
+            get
+            {
+                List<string> special = new List<string>();
+                return special.ToArray();
+            }
         }
     }
 }

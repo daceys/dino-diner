@@ -4,13 +4,14 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 
 namespace DinoDiner.Menu
 {
     /// <summary>
     /// Class for Sodasaurus drink
     /// </summary
-    public class Sodasaurus : Drink
+    public class Sodasaurus : Drink, IOrderItem, INotifyPropertyChanged
     {
         /// <summary>
         /// Field to hold sodasaurus flavors
@@ -68,6 +69,9 @@ namespace DinoDiner.Menu
                         Calories = 208;
                         break;
                 }
+                NotifyOfPropertyChanged("Price");
+                NotifyOfPropertyChanged("Calories");
+                NotifyOfPropertyChanged("Description");
             }
         }
 
@@ -90,6 +94,27 @@ namespace DinoDiner.Menu
         public override string ToString()
         {
             return size + " " + flavor + " Sodasaurus";
+        }
+
+        /// <summary>
+        /// gets the description for fryceritops
+        /// </summary>
+        public override string Description
+        {
+            get { return this.ToString(); }
+        }
+
+        /// <summary>
+        /// gets the specials for the fryceritops
+        /// </summary>
+        public override string[] Special
+        {
+            get
+            {
+                List<string> special = new List<string>();
+                if (!Ice) special.Add("Hold Ice");
+                return special.ToArray();
+            }
         }
     }
 }

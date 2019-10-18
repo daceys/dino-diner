@@ -4,13 +4,14 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 
 namespace DinoDiner.Menu
 {
     /// <summary>
     /// Class for Jurassic Java drink
     /// </summary>
-    public class JurassicJava : Drink
+    public class JurassicJava : Drink, IOrderItem, INotifyPropertyChanged
     {
         /// <summary>
         /// Sets fields for ice, room for cream, and decaf
@@ -47,6 +48,10 @@ namespace DinoDiner.Menu
                         Calories = 8;
                         break;
                 }
+                NotifyOfPropertyChanged("Price");
+                NotifyOfPropertyChanged("Calories");
+                NotifyOfPropertyChanged("Description");
+                NotifyOfPropertyChanged("Size");
             }
             get
             {
@@ -71,6 +76,8 @@ namespace DinoDiner.Menu
         public void AddIce()
         {
             Ice = true;
+            NotifyOfPropertyChanged("Ingredients");
+            NotifyOfPropertyChanged("Special");
         }
 
         /// <summary>
@@ -80,6 +87,9 @@ namespace DinoDiner.Menu
         {
             RoomForCream = true;
             ingredients.Add("Room for Cream");
+            NotifyOfPropertyChanged("Ingredients");
+            NotifyOfPropertyChanged("Special");
+
         }
 
         /// <summary>
@@ -90,6 +100,28 @@ namespace DinoDiner.Menu
         {
             if (Decaf) return size + " Decaf Jurassic Java";
             return size + " Jurassic Java";
+        }
+
+        /// <summary>
+        /// gets the description for fryceritops
+        /// </summary>
+        public override string Description
+        {
+            get { return this.ToString(); }
+        }
+
+        /// <summary>
+        /// gets the specials for the fryceritops
+        /// </summary>
+        public override string[] Special
+        {
+            get
+            {
+                List<string> special = new List<string>();
+                if (Ice) special.Add("Add Ice");
+                if (RoomForCream) special.Add("Leave Room for Cream");
+                return special.ToArray();
+            }
         }
     }
 }

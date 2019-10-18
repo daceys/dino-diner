@@ -4,13 +4,14 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 
 namespace DinoDiner.Menu
 {
     /// <summary>
     /// Class for the mezzorella sticks
     /// </summary>
-    public class MezzorellaSticks : Side
+    public class MezzorellaSticks : Side, IOrderItem, INotifyPropertyChanged
     {
         /// <summary>
         /// Holds the value for size
@@ -40,6 +41,9 @@ namespace DinoDiner.Menu
                         Calories = 720;
                         break;
                 }
+                NotifyOfPropertyChanged("Price");
+                NotifyOfPropertyChanged("Calories");
+                NotifyOfPropertyChanged("Description");
             }
             get
             {
@@ -68,5 +72,24 @@ namespace DinoDiner.Menu
             return size + " Mezzorella Sticks";
         }
 
+        /// <summary>
+        /// gets the description for mezzorella sticks
+        /// </summary>
+        public override string Description
+        {
+            get { return this.ToString(); }
+        }
+
+        /// <summary>
+        /// gets the specials for the mezzorella sticks
+        /// </summary>
+        public override string[] Special
+        {
+            get
+            {
+                List<string> special = new List<string>();
+                return special.ToArray();
+            }
+        }
     }
 }

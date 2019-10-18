@@ -4,13 +4,14 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 
 namespace DinoDiner.Menu
 {
     /// <summary>
     /// Class for the triceritots side
     /// </summary>
-    public class Triceritots : Side
+    public class Triceritots : Side, IOrderItem, INotifyPropertyChanged
     {
         /// <summary>
         /// Holds the value for size
@@ -40,6 +41,10 @@ namespace DinoDiner.Menu
                         Calories = 590;
                         break;
                 }
+                NotifyOfPropertyChanged("Price");
+                NotifyOfPropertyChanged("Calories");
+                NotifyOfPropertyChanged("Description");
+                NotifyOfPropertyChanged("Size");
             }
             get
             {
@@ -66,6 +71,26 @@ namespace DinoDiner.Menu
         public override string ToString()
         {
             return size + " Triceritots";
+        }
+
+        /// <summary>
+        /// gets the description for triceritots
+        /// </summary>
+        public override string Description
+        {
+            get { return this.ToString(); }
+        }
+
+        /// <summary>
+        /// gets the specials for the triceritots
+        /// </summary>
+        public override string[] Special
+        {
+            get
+            {
+                List<string> special = new List<string>();
+                return special.ToArray();
+            }
         }
     }
 }

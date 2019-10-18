@@ -4,13 +4,14 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 
 namespace DinoDiner.Menu
 {
     /// <summary>
     /// Class for the fryceritops side
     /// </summary>
-    public class Fryceritops : Side, IOrderItem
+    public class Fryceritops : Side, IOrderItem, INotifyPropertyChanged
     {
         /// <summary>
         /// Holds the value for size
@@ -40,6 +41,9 @@ namespace DinoDiner.Menu
                         Calories = 480;
                         break;
                 }
+                NotifyOfPropertyChanged("Price");
+                NotifyOfPropertyChanged("Calories");
+                NotifyOfPropertyChanged("Description");
             }
             get
             {
@@ -65,14 +69,20 @@ namespace DinoDiner.Menu
         /// <returns></returns>
         public override string ToString()
         {
-            return size + " Friceritops";
+            return size + " Fryceritops";
         }
 
+        /// <summary>
+        /// gets the description for fryceritops
+        /// </summary>
         public override string Description
         {
             get { return this.ToString(); }
         }
 
+        /// <summary>
+        /// gets the specials for the fryceritops
+        /// </summary>
         public override string[] Special
         {
             get

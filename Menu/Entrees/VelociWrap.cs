@@ -4,14 +4,20 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 
 namespace DinoDiner.Menu
 {
     /// <summary>
     /// Class for the veloci wrap entree
     /// </summary>
-    public class VelociWrap : Entree
+    public class VelociWrap : Entree, IOrderItem, INotifyPropertyChanged
     {
+        // Backing Variables 
+        private bool dressing = true;
+        private bool lettuce = true;
+        private bool cheese = true;
+
         /// <summary>
         /// Constructor for the creation of the wrap
         /// </summary>
@@ -32,6 +38,9 @@ namespace DinoDiner.Menu
         public void HoldDressing()
         {
             ingredients.Remove("Ceasar Dressing");
+            dressing = false;
+            NotifyOfPropertyChanged("Ingredients");
+            NotifyOfPropertyChanged("Special");
         }
 
         /// <summary>
@@ -40,6 +49,9 @@ namespace DinoDiner.Menu
         public void HoldLettuce()
         {
             ingredients.Remove("Romain Lettuce");
+            lettuce = false;
+            NotifyOfPropertyChanged("Ingredients");
+            NotifyOfPropertyChanged("Special");
         }
 
         /// <summary>
@@ -48,6 +60,9 @@ namespace DinoDiner.Menu
         public void HoldCheese()
         {
             ingredients.Remove("Parmesan Cheese");
+            cheese = false;
+            NotifyOfPropertyChanged("Ingredients");
+            NotifyOfPropertyChanged("Special");
         }
 
         /// <summary>
@@ -57,6 +72,29 @@ namespace DinoDiner.Menu
         public override string ToString()
         {
             return "Veloci-Wrap";
+        }
+
+        /// <summary>
+        /// Gets the special requirements for the prehistoric pb&j
+        /// </summary>
+        public string Description
+        {
+            get { return this.ToString(); }
+        }
+
+        /// <summary>
+        /// Gets the special requirements for the prehistoric pb&j
+        /// </summary>
+        public override string[] Special
+        {
+            get
+            {
+                List<string> special = new List<string>();
+                if (!dressing) special.Add("Hold Dressing");
+                if (!lettuce) special.Add("Hold Lettuce");
+                if (!cheese) special.Add("Hold Cheese");
+                return special.ToArray();
+            }
         }
     }
 }

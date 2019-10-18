@@ -1,4 +1,7 @@
-﻿using System.Collections.Generic;
+﻿/* VelociWrapTest.cs
+ * Modified by: Dacey Simpson
+ */
+using System.Collections.Generic;
 using Xunit;
 using DinoDiner.Menu;
 
@@ -55,6 +58,108 @@ namespace MenuTest.Entrees
             VelociWrap vw = new VelociWrap();
             vw.HoldCheese();
             Assert.DoesNotContain<string>("Parmesan Cheese", vw.Ingredients);
+        }
+
+        [Fact]
+        public void DescriptionShouldBeCorrect()
+        {
+            VelociWrap vc = new VelociWrap();
+            Assert.Equal("Veloci-Wrap", vc.Description);
+        }
+
+        [Fact]
+        public void SpecialShouldBeEmpty()
+        {
+            VelociWrap vc = new VelociWrap();
+            Assert.Empty(vc.Special);
+        }
+
+        [Fact]
+        public void HoldDressingShouldAddToSpecial()
+        {
+            VelociWrap vc = new VelociWrap();
+            vc.HoldDressing();
+            Assert.Collection<string>(vc.Special,
+                item =>
+                {
+                    Assert.Equal("Hold Dressing", item);
+                });
+        }
+
+        [Fact]
+        public void HoldLettuceShouldAddToSpecial()
+        {
+            VelociWrap vc = new VelociWrap();
+            vc.HoldLettuce();
+            Assert.Collection<string>(vc.Special,
+                item =>
+                {
+                    Assert.Equal("Hold Lettuce", item);
+                });
+        }
+
+        [Fact]
+        public void HoldCheeseShouldAddToSpecial()
+        {
+            VelociWrap vc = new VelociWrap();
+            vc.HoldCheese();
+            Assert.Collection<string>(vc.Special,
+                item =>
+                {
+                    Assert.Equal("Hold Cheese", item);
+                });
+        }
+
+        [Fact]
+        public void HoldDressingLettuceAndCheeseShouldAddToSpecial()
+        {
+            VelociWrap vc = new VelociWrap();
+            vc.HoldDressing();
+            vc.HoldLettuce();
+            vc.HoldCheese();
+            Assert.Collection<string>(vc.Special,
+                item =>
+                {
+                    Assert.Equal("Hold Dressing", item);
+                },
+                item =>
+                {
+                    Assert.Equal("Hold Lettuce", item);
+                },
+                item =>
+                {
+                    Assert.Equal("Hold Cheese", item);
+                });
+        }
+
+        [Fact]
+        public void HoldingDressingShouldNotifySpecialChange()
+        {
+            VelociWrap vc = new VelociWrap();
+            Assert.PropertyChanged(vc, "Special", () =>
+            {
+                vc.HoldDressing();
+            });
+        }
+
+        [Fact]
+        public void HoldingLettuceShouldNotifySpecialChange()
+        {
+            VelociWrap vc = new VelociWrap();
+            Assert.PropertyChanged(vc, "Special", () =>
+            {
+                vc.HoldLettuce();
+            });
+        }
+
+        [Fact]
+        public void HoldingCheeseShouldNotifySpecialChange()
+        {
+            VelociWrap vc = new VelociWrap();
+            Assert.PropertyChanged(vc, "Special", () =>
+            {
+                vc.HoldCheese();
+            });
         }
     }
 }

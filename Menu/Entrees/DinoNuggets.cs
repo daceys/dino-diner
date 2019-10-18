@@ -4,13 +4,14 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 
 namespace DinoDiner.Menu
 {
     /// <summary>
     /// Class for the dino nugget entree
     /// </summary>
-    public class DinoNuggets : Entree
+    public class DinoNuggets : Entree, IOrderItem, INotifyPropertyChanged
     {
         /// <summary>
         /// Field to keep track of added extra nuggets
@@ -41,6 +42,8 @@ namespace DinoDiner.Menu
             Price = 4.25 + (extraNuggets * 0.25);
             Calories = 59 * 6 + (extraNuggets * 59);
             ingredients.Add("Chicken Nugget");
+            NotifyOfPropertyChanged("Ingredients");
+            NotifyOfPropertyChanged("Special");
         }
 
         /// <summary>
@@ -50,6 +53,27 @@ namespace DinoDiner.Menu
         public override string ToString()
         {
             return "Dino-Nuggets";
+        }
+
+        /// <summary>
+        /// Gets the special requirements for the prehistoric pb&j
+        /// </summary>
+        public string Description
+        {
+            get { return this.ToString(); }
+        }
+
+        /// <summary>
+        /// Gets the special requirements for the prehistoric pb&j
+        /// </summary>
+        public override string[] Special
+        {
+            get
+            {
+                List<string> special = new List<string>();
+                if (extraNuggets != 0) special.Add(extraNuggets + " Extra Nugget(s)");
+                return special.ToArray();
+            }
         }
     }
 }

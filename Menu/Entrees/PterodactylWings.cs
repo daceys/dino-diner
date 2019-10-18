@@ -4,13 +4,14 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 
 namespace DinoDiner.Menu
 {
     /// <summary>
     /// Class for the pterodactyl wings entree
     /// </summary>
-    public class PterodactylWings : Entree
+    public class PterodactylWings : Entree, IOrderItem, INotifyPropertyChanged
     {
         /// <summary>
         /// Constructor for creation of the wings
@@ -30,6 +31,26 @@ namespace DinoDiner.Menu
         public override string ToString()
         {
             return "Pterodactyl Wings";
+        }
+
+        /// <summary>
+        /// Gets the special requirements for the prehistoric pb&j
+        /// </summary>
+        public string Description
+        {
+            get { return this.ToString(); }
+        }
+
+        /// <summary>
+        /// Gets the special requirements for the prehistoric pb&j
+        /// </summary>
+        public override string[] Special
+        {
+            get
+            {
+                List<string> special = new List<string>();
+                return special.ToArray();
+            }
         }
     }
 }
