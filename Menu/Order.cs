@@ -7,17 +7,11 @@ namespace DinoDiner.Menu
 {
     public class Order 
     {
-        public ObservableCollection<IOrderItem> Item { get; set; }
-
-        private double cost; 
+        public ObservableCollection<IOrderItem> Items { get; set; } = new ObservableCollection<IOrderItem>();
 
         public double SubtotalCost
         {
-            get
-            {
-                if (cost < 0) return 0;
-                return cost;
-            }
+            get;
         }
 
         public double SalesTaxRate { get; protected set; }
