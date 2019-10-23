@@ -25,7 +25,7 @@ namespace PointOfSale
         {
             InitializeComponent();
             Order order = DataContext as Order;
-            if (order != null)
+            /*if (order != null)
             {
                 order.Items.Add(new PrehistoricPBJ());
                 order.Items.Add(new Sodasaurus());
@@ -34,7 +34,25 @@ namespace PointOfSale
                 sb.HoldPickle();
                 sb.HoldBun();
                 order.Items.Add(sb);
-            }
+            }*/
+        }
+
+        private void PassDataContentToPage()
+        {
+           if (OrderUI.Content is Page page)
+           {
+                page.DataContext = OrderUI.DataContext;
+           }
+        }
+
+        private void OnLoadCompleted(object sender, NavigationEventArgs args)
+        {
+            PassDataContentToPage();
+        }
+
+        private void OnDataContextChanged(object sender, DependencyPropertyChangedEventArgs args)
+        {
+            PassDataContentToPage();
         }
     }
 }

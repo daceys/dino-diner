@@ -28,12 +28,12 @@
         </Grid.ColumnDefinitions>
         <TextBlock HorizontalAlignment="Center">Side</TextBlock>
         <TextBlock HorizontalAlignment="Center" Grid.Column="1">Size</TextBlock>
-        <Button>Fryceritops</Button>
-        <Button Grid.Row="1">Meteor Mac &amp; Cheese</Button>
-        <Button Grid.Row="2">Mezzorella Sticks</Button>
-        <Button Grid.Row="3">Triceritots</Button>
-        <Button Grid.Column="1">Small</Button>
-        <Button Grid.Column="1" Grid.Row="1">Medium</Button>
-        <Button Grid.Column="1" Grid.Row="2">Large</Button>
+        <Button Click="OnSelectFryceritops">Fryceritops</Button>
+        <Button Click="OnSelectMeteorMacAndCheese" Grid.Row="1">Meteor Mac &amp; Cheese</Button>
+        <Button Click="OnSelectMezzorellaSticks" Grid.Row="2">Mezzorella Sticks</Button>
+        <Button Click="OnSelectTriceritots" Grid.Row="3">Triceritots</Button>
+        <Button Tag="Small" Click="OnChangeSize" Grid.Column="1">Small</Button>
+        <Button Tag="Medium" Click="OnChangeSize" Grid.Column="1" Grid.Row="1">Medium</Button>
+        <Button Tag="Large" Click="OnChangeSize" Grid.Column="1" Grid.Row="2">Large</Button>
     </Grid>
 </Page>

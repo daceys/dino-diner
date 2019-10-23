@@ -20,6 +20,42 @@ namespace DinoDiner.Menu
         public bool Ice = true;
 
         /// <summary>
+        /// Holds the value for size
+        /// </summary>
+        private Size size;
+        /// <summary>
+        /// Determines size and sets the price and calories for each
+        /// </summary>
+        public override Size Size
+        {
+            set
+            {
+                size = value;
+                switch (size)
+                {
+                    case Size.Small:
+                        Price = 0.10;
+                        Calories = 0;
+                        break;
+                    case Size.Medium:
+                        Price = 0.10;
+                        Calories = 0;
+                        break;
+                    case Size.Large:
+                        Price = 0.10;
+                        Calories = 0;
+                        break;
+                }
+                NotifyOfPropertyChanged("Description");
+                NotifyOfPropertyChanged("Size");
+            }
+            get
+            {
+                return size;
+            }
+        }
+
+        /// <summary>
         /// Constructor for creation of water
         /// </summary>
         public Water()

@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using DinoDiner.Menu;
 
 namespace PointOfSale
 {
@@ -24,5 +25,13 @@ namespace PointOfSale
         {
             InitializeComponent();
         }
+
+        /*private void OnSelectionChanged(object sender, EventArgs args)
+        {
+            if(OrderItems.SelectedItem is Side)
+            {
+
+            }
+        }*/
     }
 }
