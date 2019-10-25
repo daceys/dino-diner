@@ -11,7 +11,7 @@ namespace DinoDiner.Menu
     /// <summary>
     /// Base class for the entrees
     /// </summary>
-    public abstract class Entree : IMenuItem, INotifyPropertyChanged
+    public abstract class Entree : IMenuItem, INotifyPropertyChanged, IOrderItem
     {
         /// <summary>
         /// Event handler for when a property changes
@@ -55,5 +55,9 @@ namespace DinoDiner.Menu
         /// Property to get the specials for each class
         /// </summary>
         public virtual string[] Special { get; }
+        /// <summary>
+        /// Gets the Description
+        /// </summary>
+        public virtual string Description { get; }
     }
 }

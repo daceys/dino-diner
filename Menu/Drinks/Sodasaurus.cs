@@ -23,7 +23,11 @@ namespace DinoDiner.Menu
         public SodasaurusFlavor Flavor
         {
             get { return flavor; }
-            set { flavor = value; }
+            set
+            {
+                flavor = value;
+                NotifyOfPropertyChanged("Description");
+            }
         }
 
         /// <summary>
@@ -45,7 +49,7 @@ namespace DinoDiner.Menu
         /// <summary>
         /// Determines size and sets the price and calories for each
         /// </summary>
-        public Size Size
+        public override Size Size
         {
             get
             {

@@ -12,7 +12,7 @@ namespace DinoDiner.Menu
     /// <summary>
     /// Class for the combos
     /// </summary>
-    public class CretaceousCombo : IMenuItem, INotifyPropertyChanged
+    public class CretaceousCombo : IMenuItem, INotifyPropertyChanged, IOrderItem
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -22,6 +22,7 @@ namespace DinoDiner.Menu
         }
 
         private Entree entree;
+        
 
         /// <summary>
         /// Get and set the entrees
@@ -158,7 +159,7 @@ namespace DinoDiner.Menu
             get { return this.ToString(); }
         }
 
-        public string[] Specail
+        public string[] Special
         {
             get
             {

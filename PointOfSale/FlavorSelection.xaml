@@ -16,12 +16,12 @@
                 <Setter Property="Margin" Value="10"/>
             </Style>
         </WrapPanel.Resources>
-        <Button>Cherry</Button>
-        <Button>Chocolate</Button>
-        <Button>Cola</Button>
-        <Button>Lime</Button>
-        <Button>Orange</Button>
-        <Button>Root Beer</Button>
-        <Button>Vanilla</Button>
+        <Button Click="OnSelectCherry">Cherry</Button>
+        <Button Click="OnSelectChocolate">Chocolate</Button>
+        <Button Click="OnSelectCola">Cola</Button>
+        <Button Click="OnSelectLime">Lime</Button>
+        <Button Click="OnSelectOrange">Orange</Button>
+        <Button Click="OnSelectRootBeer">Root Beer</Button>
+        <Button Click="OnSelectVanilla">Vanilla</Button>
     </WrapPanel>
 </Page>
