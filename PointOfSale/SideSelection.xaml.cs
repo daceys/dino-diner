@@ -1,4 +1,7 @@
-﻿using System;
+﻿/* SideSelection.xaml.cs
+ * Author: Dacey Simpson
+ */
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,19 +25,32 @@ namespace PointOfSale
     /// </summary>
     public partial class SideSelection : Page
     {
+        // Backing variable
         public Side side;
 
+        /// <summary>
+        /// Constructor for the Side selection page
+        /// </summary>
         public SideSelection()
         {
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Constructor  for the current side selection
+        /// </summary>
+        /// <param name="side">current side</param>
         public SideSelection(Side side)
         {
             InitializeComponent();
             this.side = side;
         }
 
+        /// <summary>
+        /// Method to add a fryceritops to the order
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         private void OnSelectFryceritops(object sender, RoutedEventArgs args)
         {
             if (DataContext is Order order)
@@ -42,9 +58,13 @@ namespace PointOfSale
                 side = new Fryceritops();
                 order.Add(side);
             }
-            //NavigationService.GoBack();
         }
-
+        
+        /// <summary>
+        /// Method to add a meteor mac and cheese to the order
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         private void OnSelectMeteorMacAndCheese(object sender, RoutedEventArgs args)
         {
             if (DataContext is Order order)
@@ -53,7 +73,11 @@ namespace PointOfSale
                 order.Add(side);
             }
         }
-
+        /// <summary>
+        /// Method to add a mezzorella sticks to the order
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         private void OnSelectMezzorellaSticks(object sender, RoutedEventArgs args)
         {
             if (DataContext is Order order)
@@ -63,6 +87,11 @@ namespace PointOfSale
             }
         }
 
+        /// <summary>
+        /// Method to add a triceritots to the order
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         private void OnSelectTriceritots(object sender, RoutedEventArgs args)
         {
             if (DataContext is Order order)
@@ -72,6 +101,11 @@ namespace PointOfSale
             }
         }
 
+        /// <summary>
+        /// Method to change the sides size
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         private void OnChangeSize(object sender, RoutedEventArgs args)
         {
             if (sender is FrameworkElement element)

@@ -24,6 +24,7 @@ namespace PointOfSale
     /// </summary>
     public partial class ComboSelection : Page
     {
+        // Backing variable
         public CretaceousCombo combo;
 
         /// <summary>
@@ -34,6 +35,10 @@ namespace PointOfSale
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Constructor for Combo Selection
+        /// </summary>
+        /// <param name="combo">current combo selected</param>
         public ComboSelection(CretaceousCombo combo)
         {
             InitializeComponent();
@@ -41,11 +46,10 @@ namespace PointOfSale
         }
 
         /// <summary>
-        /// Method to send user to the customize combo page when you have selected an entree
+        /// Method to add a brontowurst combo to the order
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="args"></param>
-
         private void OnSelectBrontowurstCombo(object sender, RoutedEventArgs args)
         {
             if (DataContext is Order order)
@@ -56,6 +60,11 @@ namespace PointOfSale
             }
         }
 
+        /// <summary>
+        /// Method to add a dino nuggets combo to the order
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         private void OnSelectDinoNuggetsCombo(object sender, RoutedEventArgs args)
         {
             if (DataContext is Order order)
@@ -66,6 +75,11 @@ namespace PointOfSale
             }
         }
 
+        /// <summary>
+        /// Method to add a prehistoric pbj combo to the order
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         private void OnSelectPrehistoricPBJCombo(object sender, RoutedEventArgs args)
         {
             if (DataContext is Order order)
@@ -76,6 +90,11 @@ namespace PointOfSale
             }
         }
 
+        /// <summary>
+        /// Method to add a pterodactyl wings combo to the order
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         private void OnSelectPterodactylWingsCombo(object sender, RoutedEventArgs args)
         {
             if (DataContext is Order order)
@@ -86,6 +105,11 @@ namespace PointOfSale
             }
         }
 
+        /// <summary>
+        /// Method to add a steakosaurus burger combo to the order
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         private void OnSelectSteakosaurusBurgerCombo(object sender, RoutedEventArgs args)
         {
             if (DataContext is Order order)
@@ -96,6 +120,11 @@ namespace PointOfSale
             }
         }
 
+        /// <summary>
+        /// Method to add a trex king burger combo to the order
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         private void OnSelectTRexKingBurgerCombo(object sender, RoutedEventArgs args)
         {
             if (DataContext is Order order)
@@ -106,6 +135,11 @@ namespace PointOfSale
             }
         }
 
+        /// <summary>
+        /// Method to add a velociwrap combo to the order
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         private void OnSelectVelociWrapCombo(object sender, RoutedEventArgs args)
         {
             if (DataContext is Order order)

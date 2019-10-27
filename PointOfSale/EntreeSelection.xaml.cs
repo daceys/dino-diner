@@ -1,4 +1,7 @@
-﻿using System;
+﻿/* EntreeSelection.xaml.cs
+ * Author: Dacey Simpson
+ */
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -21,19 +24,32 @@ namespace PointOfSale
     /// </summary>
     public partial class EntreeSelection : Page
     {
+        // Backing variable 
         public Entree entree;
         
+        /// <summary>
+        /// Constructor for the entree selection page
+        /// </summary>
         public EntreeSelection()
         {
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Constructor for the current entree selection
+        /// </summary>
+        /// <param name="entree">current entree</param>
         public EntreeSelection(Entree entree)
         {
             InitializeComponent();
             this.entree = entree;
         }
 
+        /// <summary>
+        /// Method to add a brontowurst to the order
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         private void OnSelectBrontowurst(object sender, RoutedEventArgs args)
         {
             if (DataContext is Order order)
@@ -44,6 +60,11 @@ namespace PointOfSale
             NavigationService.GoBack();
         }
 
+        /// <summary>
+        /// Method to add a dino nuggets to the order
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         private void OnSelectDinoNuggets(object sender, RoutedEventArgs args)
         {
             if (DataContext is Order order)
@@ -54,6 +75,11 @@ namespace PointOfSale
             NavigationService.GoBack();
         }
 
+        /// <summary>
+        /// Method to add a prehistoric pbj to the order
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         private void OnSelectPrehistoricPBJ(object sender, RoutedEventArgs args)
         {
             if (DataContext is Order order)
@@ -64,6 +90,11 @@ namespace PointOfSale
             NavigationService.GoBack();
         }
 
+        /// <summary>
+        /// Method to add pterodactyl wings to the order
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         private void OnSelectPterodactylWings(object sender, RoutedEventArgs args)
         {
             if (DataContext is Order order)
@@ -74,6 +105,11 @@ namespace PointOfSale
             NavigationService.GoBack();
         }
 
+        /// <summary>
+        /// Method to add a steakosaurus burger to the order
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         private void OnSelectSteakosaurusBurger(object sender, RoutedEventArgs args)
         {
             if (DataContext is Order order)
@@ -84,6 +120,11 @@ namespace PointOfSale
             NavigationService.GoBack();
         }
 
+        /// <summary>
+        /// Method to add a trex king burger to the order
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         private void OnSelectTRexKingBurger(object sender, RoutedEventArgs args)
         {
             if (DataContext is Order order)
@@ -94,6 +135,11 @@ namespace PointOfSale
             NavigationService.GoBack();
         }
 
+        /// <summary>
+        /// Method to add a velociwrap to the order
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         private void OnSelectVelociWrap(object sender, RoutedEventArgs args)
         {
             if (DataContext is Order order)

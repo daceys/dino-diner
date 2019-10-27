@@ -26,6 +26,7 @@ namespace PointOfSale
     /// </summary>
     public partial class DrinkSelection : Page
     {
+        // Backing variable 
         public Drink drink;
 
         /// <summary>
@@ -40,13 +41,33 @@ namespace PointOfSale
             Flavor.IsEnabled = false;
         }
 
+        /// <summary>
+        /// Constructor for drink selection when already have a current drink
+        /// </summary>
+        /// <param name="drink">current drink</param>
         public DrinkSelection(Drink drink)
         {
             InitializeComponent();
             Lemon.IsEnabled = false;
+            Flavor.IsEnabled = false;
             SweetDecaf.IsEnabled = false;
             HoldIce.IsEnabled = false;
-            Flavor.IsEnabled = false;
+            if (drink is Tyrannotea)
+            {
+                Lemon.IsEnabled = true;
+                SweetDecaf.IsEnabled = true;
+                HoldIce.IsEnabled = true;
+            }
+            if (drink is Sodasaurus)
+            {
+                Flavor.IsEnabled = true;
+            }
+            if (drink is JurassicJava)
+            {
+                SweetDecaf.IsEnabled = true;
+                HoldIce.IsEnabled = true;
+            }
+            if (drink is Water) HoldIce.IsEnabled = true;
             this.drink = drink;
         }
 
@@ -60,6 +81,11 @@ namespace PointOfSale
             NavigationService.Navigate(new FlavorSelection());
         }
 
+        /// <summary>
+        /// Method to add a jurassic java to the order
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         private void OnSelectJurassicJava(object sender, RoutedEventArgs args)
         {
             if (DataContext is Order order)
@@ -70,7 +96,11 @@ namespace PointOfSale
             SweetDecaf.IsEnabled = true;
             HoldIce.IsEnabled = true;
         }
-
+        /// <summary>
+        /// Method to add a sodasaurus to the order
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         private void OnSelectSodasaurus(object sender, RoutedEventArgs args)
         {
             if (DataContext is Order order)
@@ -81,6 +111,11 @@ namespace PointOfSale
             Flavor.IsEnabled = true;
         }
 
+        /// <summary>
+        /// Method to add a tyrannotea to the order
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         private void OnSelectTyrannotea(object sender, RoutedEventArgs args)
         {
             if (DataContext is Order order)
@@ -93,6 +128,11 @@ namespace PointOfSale
             HoldIce.IsEnabled = true;
         }
 
+        /// <summary>
+        /// Method to add a water to the order
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         private void OnSelectWater(object sender, RoutedEventArgs args)
         {
             if (DataContext is Order order)
@@ -103,6 +143,11 @@ namespace PointOfSale
             HoldIce.IsEnabled = true;
         }
 
+        /// <summary>
+        /// Method to handle a change in size and display with the order
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         private void OnChangeSize(object sender, RoutedEventArgs args)
         {
             if (sender is FrameworkElement element)
@@ -111,6 +156,11 @@ namespace PointOfSale
             }
         }
 
+        /// <summary>
+        /// Method to create a sweet tyrannotea or a decaf jurassic java
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         private void OnSweetDecaf(object sender, RoutedEventArgs args)
         {
             if (drink is Tyrannotea tea)
@@ -123,6 +173,11 @@ namespace PointOfSale
             }
         }
 
+        /// <summary>
+        /// Method to add a lemon to the selected tyrannotea
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         private void OnAddLemon(object sender, RoutedEventArgs args)
         {
             if (drink is Tyrannotea tea)
@@ -131,6 +186,11 @@ namespace PointOfSale
             }
         }
 
+        /// <summary>
+        /// Method to hold ice for the tyrannotea and water or add ice for the jurassic java
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         private void OnHoldIce(object sender, RoutedEventArgs args)
         {
             if (drink is Tyrannotea tea)
@@ -147,6 +207,11 @@ namespace PointOfSale
             }
         }
 
+        /// <summary>
+        /// Method to send user back to menu selection page
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         private void Done(object sender, RoutedEventArgs args)
         {
             NavigationService.GoBack();
