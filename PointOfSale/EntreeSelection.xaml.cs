@@ -54,10 +54,10 @@ namespace PointOfSale
         {
             if (DataContext is Order order)
             {
-                entree = new Brontowurst();
-                order.Add(entree);
+                Brontowurst bw = new Brontowurst();
+                order.Add(bw);
+                NavigationService.Navigate(new CustomizeBrontowurst(bw));
             }
-            NavigationService.GoBack();
         }
 
         /// <summary>
@@ -69,10 +69,10 @@ namespace PointOfSale
         {
             if (DataContext is Order order)
             {
-                entree = new DinoNuggets();
-                order.Add(entree);
+                DinoNuggets nug = new DinoNuggets();
+                order.Add(nug);
+                NavigationService.Navigate(new CustomizeDinoNugget(nug));
             }
-            NavigationService.GoBack();
         }
 
         /// <summary>
@@ -84,10 +84,10 @@ namespace PointOfSale
         {
             if (DataContext is Order order)
             {
-                entree = new PrehistoricPBJ();
-                order.Add(entree);
+                PrehistoricPBJ pbj = new PrehistoricPBJ();
+                order.Add(pbj);
+                NavigationService.Navigate(new CustomizePrehistoricPBJ(pbj));
             }
-            NavigationService.GoBack();
         }
 
         /// <summary>
