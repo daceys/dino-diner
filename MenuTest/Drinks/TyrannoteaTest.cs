@@ -114,7 +114,7 @@ namespace MenuTest.Drinks
         public void ShouldHaveCorrectCaloriesAfterAddingSweetSmall()
         {
             Tyrannotea tea = new Tyrannotea();
-            tea.AddSweet();
+            tea.Sweet = true;
             tea.Size = Size.Medium;
             tea.Size = Size.Small;
             Assert.Equal<uint>(16, tea.Calories);
@@ -123,7 +123,7 @@ namespace MenuTest.Drinks
         public void ShouldHaveCorrectCaloriesAfterAddingSweetMedium()
         {
             Tyrannotea tea = new Tyrannotea();
-            tea.AddSweet();
+            tea.Sweet = true;
             tea.Size = Size.Medium;
             Assert.Equal<uint>(32, tea.Calories);
         }
@@ -131,7 +131,7 @@ namespace MenuTest.Drinks
         public void ShouldHaveCorrectCaloriesAfterAddingSweetLarge()
         {
             Tyrannotea tea = new Tyrannotea();
-            tea.AddSweet();
+            tea.Sweet = true;
             tea.Size = Size.Large;
             Assert.Equal<uint>(64, tea.Calories);
         }
@@ -140,7 +140,7 @@ namespace MenuTest.Drinks
         public void ShouldHaveCorrectCaloriesAfterRemovingSweetSmall()
         {
             Tyrannotea tea = new Tyrannotea();
-            tea.AddSweet();
+            tea.Sweet = true;
             tea.Sweet = false;
             tea.Size = Size.Medium;
             tea.Size = Size.Small;
@@ -150,7 +150,7 @@ namespace MenuTest.Drinks
         public void ShouldHaveCorrectCaloriesAfterRemovingSweetMedium()
         {
             Tyrannotea tea = new Tyrannotea();
-            tea.AddSweet();
+            tea.Sweet = true;
             tea.Sweet = false;
             tea.Size = Size.Medium;
             Assert.Equal<uint>(16, tea.Calories);
@@ -159,7 +159,7 @@ namespace MenuTest.Drinks
         public void ShouldHaveCorrectCaloriesAfterRemovingSweetLarge()
         {
             Tyrannotea tea = new Tyrannotea();
-            tea.AddSweet();
+            tea.Sweet = true;
             tea.Sweet = false;
             tea.Size = Size.Large;
             Assert.Equal<uint>(32, tea.Calories);
@@ -180,15 +180,6 @@ namespace MenuTest.Drinks
             Assert.Contains<string>("Water", tea.Ingredients);
             Assert.Contains<string>("Tea", tea.Ingredients);
             Assert.Contains<string>("Lemon", tea.Ingredients);
-        }
-        [Fact]
-        public void ShouldHaveCorrectIngredientsWhenSweet()
-        {
-            Tyrannotea tea = new Tyrannotea();
-            tea.AddSweet();
-            Assert.Contains<string>("Water", tea.Ingredients);
-            Assert.Contains<string>("Tea", tea.Ingredients);
-            Assert.Contains<string>("Cane Sugar", tea.Ingredients);
         }
 
         [Theory]

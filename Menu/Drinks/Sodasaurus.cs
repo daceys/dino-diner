@@ -90,6 +90,7 @@ namespace DinoDiner.Menu
         public void HoldIce()
         {
             Ice = false;
+            NotifyOfPropertyChanged("Special");
         }
 
         /// <summary>

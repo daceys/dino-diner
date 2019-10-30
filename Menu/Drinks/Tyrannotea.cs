@@ -16,7 +16,19 @@ namespace DinoDiner.Menu
         /// <summary>
         /// Fields for sweet tea, lemon, and ice
         /// </summary>
-        public bool Sweet = false;
+        private bool  sweet;
+        public bool Sweet
+        {
+            get
+            {
+                return sweet;
+            }
+            set
+            {
+                sweet = value;
+                NotifyOfPropertyChanged("Description");
+            }
+        }
         public bool Lemon = false;
         public bool Ice = true;
 
@@ -89,15 +101,7 @@ namespace DinoDiner.Menu
         public void HoldIce()
         {
             Ice = false;
-        }
-
-        /// <summary>
-        /// Method to make tyrannotea a sweet tea
-        /// </summary>
-        public void AddSweet()
-        {
-            Sweet = true;
-            ingredients.Add("Cane Sugar");
+            NotifyOfPropertyChanged("Special");
         }
 
         /// <summary>

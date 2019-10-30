@@ -165,7 +165,7 @@ namespace PointOfSale
         {
             if (drink is Tyrannotea tea)
             {
-                tea.AddSweet();
+                tea.Sweet = true;
             }
             if (drink is JurassicJava java)
             {
