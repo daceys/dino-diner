@@ -27,7 +27,8 @@ namespace PointOfSale
     public partial class DrinkSelection : Page
     {
         // Backing variable 
-        public Drink drink;
+        private Drink drink;
+        private CretaceousCombo combo;
 
         /// <summary>
         /// Constructor for Drink Selection
@@ -71,6 +72,13 @@ namespace PointOfSale
             this.drink = drink;
         }
 
+        public DrinkSelection(CretaceousCombo combo)
+        {
+            InitializeComponent();
+            this.combo = combo;
+            this.drink = combo.Drink;
+        }
+
         /// <summary>
         /// When select the flavor button
         /// </summary>
@@ -88,7 +96,12 @@ namespace PointOfSale
         /// <param name="args"></param>
         private void OnSelectJurassicJava(object sender, RoutedEventArgs args)
         {
-            if (DataContext is Order order)
+            if (combo != null)
+            {
+                combo.Drink = new JurassicJava();
+                
+            }
+            else if (DataContext is Order order)
             {
                 drink = new JurassicJava();
                 order.Add(drink);
@@ -103,7 +116,11 @@ namespace PointOfSale
         /// <param name="args"></param>
         private void OnSelectSodasaurus(object sender, RoutedEventArgs args)
         {
-            if (DataContext is Order order)
+            if (combo != null)
+            {
+                combo.Drink = new Sodasaurus();
+            }
+            else if (DataContext is Order order)
             {
                 drink = new Sodasaurus();
                 order.Add(drink);
@@ -118,7 +135,11 @@ namespace PointOfSale
         /// <param name="args"></param>
         private void OnSelectTyrannotea(object sender, RoutedEventArgs args)
         {
-            if (DataContext is Order order)
+            if (combo != null)
+            {
+                combo.Drink = new Tyrannotea();
+            }
+            else if (DataContext is Order order)
             {
                 drink = new Tyrannotea();
                 order.Add(drink);
@@ -135,6 +156,10 @@ namespace PointOfSale
         /// <param name="args"></param>
         private void OnSelectWater(object sender, RoutedEventArgs args)
         {
+            if (combo != null)
+            {
+                combo.Drink = new Water();
+            }
             if (DataContext is Order order)
             {
                 drink = new Water();

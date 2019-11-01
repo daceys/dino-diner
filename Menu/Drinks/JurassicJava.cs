@@ -18,7 +18,16 @@ namespace DinoDiner.Menu
         /// </summary>
         public bool Ice = false;
         public bool RoomForCream = false;
-        public bool Decaf = false;
+        private bool decaf;
+        public bool Decaf
+        {
+            get { return decaf; }
+            set
+            {
+                decaf = value;
+                NotifyOfPropertyChanged("Description");
+            }
+        }
 
         /// <summary>
         /// Holds the value for size

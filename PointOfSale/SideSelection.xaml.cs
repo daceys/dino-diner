@@ -26,7 +26,8 @@ namespace PointOfSale
     public partial class SideSelection : Page
     {
         // Backing variable
-        public Side side;
+        private Side side;
+        private CretaceousCombo combo;
 
         /// <summary>
         /// Constructor for the Side selection page
@@ -46,6 +47,13 @@ namespace PointOfSale
             this.side = side;
         }
 
+        public SideSelection(CretaceousCombo combo)
+        {
+            InitializeComponent();
+            this.combo = combo;
+            this.side = combo.Side;
+        }
+
         /// <summary>
         /// Method to add a fryceritops to the order
         /// </summary>
@@ -53,7 +61,12 @@ namespace PointOfSale
         /// <param name="args"></param>
         private void OnSelectFryceritops(object sender, RoutedEventArgs args)
         {
-            if (DataContext is Order order)
+            if (combo != null)
+            {
+                combo.Side = new Fryceritops();
+                this.side = combo.Side;
+            }
+            else if (DataContext is Order order)
             {
                 side = new Fryceritops();
                 order.Add(side);
@@ -67,7 +80,12 @@ namespace PointOfSale
         /// <param name="args"></param>
         private void OnSelectMeteorMacAndCheese(object sender, RoutedEventArgs args)
         {
-            if (DataContext is Order order)
+            if (combo != null)
+            {
+                combo.Side = new MeteorMacAndCheese();
+                this.side = combo.Side;
+            }
+            else if (DataContext is Order order)
             {
                 side = new MeteorMacAndCheese();
                 order.Add(side);
@@ -80,7 +98,12 @@ namespace PointOfSale
         /// <param name="args"></param>
         private void OnSelectMezzorellaSticks(object sender, RoutedEventArgs args)
         {
-            if (DataContext is Order order)
+            if (combo != null)
+            {
+                combo.Side = new MezzorellaSticks();
+                this.side = combo.Side;
+            }
+            else if (DataContext is Order order)
             {
                 side = new MezzorellaSticks();
                 order.Add(side);
@@ -94,7 +117,12 @@ namespace PointOfSale
         /// <param name="args"></param>
         private void OnSelectTriceritots(object sender, RoutedEventArgs args)
         {
-            if (DataContext is Order order)
+            if (combo != null)
+            {
+                combo.Side = new Triceritots();
+                this.side = combo.Side;
+            }
+            else if (DataContext is Order order)
             {
                 side = new Triceritots();
                 order.Add(side);

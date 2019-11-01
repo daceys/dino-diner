@@ -30,8 +30,8 @@
         <TextBlock Grid.Column="1" HorizontalAlignment="Center">Size</TextBlock>
         <Button Click="SelectSide">Side</Button>
         <Button Click="SelectDrink" Grid.Row="1">Drink</Button>
-        <Button Grid.Row="0" Grid.Column="1">Small</Button>
-        <Button Grid.Row="1" Grid.Column="1">Medium</Button>
-        <Button Grid.Row="2" Grid.Column="1">Large</Button>
+        <Button Grid.Row="0" Grid.Column="1" Click="OnChangeSize" Tag="Small">Small</Button>
+        <Button Grid.Row="1" Grid.Column="1" Click="OnChangeSize" Tag="Medium">Medium</Button>
+        <Button Grid.Row="2" Grid.Column="1" Click="OnChangeSize" Tag="Large">Large</Button>
     </Grid>
 </Page>

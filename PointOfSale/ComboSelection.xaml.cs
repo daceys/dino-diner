@@ -56,7 +56,7 @@ namespace PointOfSale
             {
                 combo = new CretaceousCombo(new Brontowurst());
                 order.Add(combo);
-                NavigationService.Navigate(new CustomizeCombo());
+                NavigationService.Navigate(new CustomizeCombo(combo));
             }
         }
 
@@ -71,7 +71,7 @@ namespace PointOfSale
             {
                 combo = new CretaceousCombo(new DinoNuggets());
                 order.Add(combo);
-                NavigationService.Navigate(new CustomizeCombo());
+                NavigationService.Navigate(new CustomizeCombo(combo));
             }
         }
 
@@ -86,7 +86,7 @@ namespace PointOfSale
             {
                 combo = new CretaceousCombo(new PrehistoricPBJ());
                 order.Add(combo);
-                NavigationService.Navigate(new CustomizeCombo());
+                NavigationService.Navigate(new CustomizeCombo(combo));
             }
         }
 
@@ -101,7 +101,7 @@ namespace PointOfSale
             {
                 combo = new CretaceousCombo(new PterodactylWings());
                 order.Add(combo);
-                NavigationService.Navigate(new CustomizeCombo());
+                NavigationService.Navigate(new CustomizeCombo(combo));
             }
         }
 
@@ -116,7 +116,7 @@ namespace PointOfSale
             {
                 combo = new CretaceousCombo(new SteakosaurusBurger());
                 order.Add(combo);
-                NavigationService.Navigate(new CustomizeCombo());
+                NavigationService.Navigate(new CustomizeCombo(combo));
             }
         }
 
@@ -131,7 +131,7 @@ namespace PointOfSale
             {
                 combo = new CretaceousCombo(new TRexKingBurger());
                 order.Add(combo);
-                NavigationService.Navigate(new CustomizeCombo());
+                NavigationService.Navigate(new CustomizeCombo(combo));
             }
         }
 
@@ -146,7 +146,7 @@ namespace PointOfSale
             {
                 combo = new CretaceousCombo(new VelociWrap());
                 order.Add(combo);
-                NavigationService.Navigate(new CustomizeCombo());
+                NavigationService.Navigate(new CustomizeCombo(combo));
             }
         }
     }
