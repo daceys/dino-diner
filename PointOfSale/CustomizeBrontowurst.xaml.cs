@@ -26,6 +26,7 @@ namespace PointOfSale
     {
         // Backing variable
         private Brontowurst bw;
+        private CretaceousCombo combo;
 
         /// <summary>
         /// Constructor for the customize brontowurst page
@@ -35,6 +36,13 @@ namespace PointOfSale
         {
             InitializeComponent();
             this.bw = bw;
+        }
+
+        public CustomizeBrontowurst(CretaceousCombo combo)
+        {
+            InitializeComponent();
+            this.combo = combo;
+            this.bw = combo.Entree as Brontowurst;
         }
 
         /// <summary>
@@ -65,6 +73,23 @@ namespace PointOfSale
         private void OnHoldOnion(object sender, RoutedEventArgs args)
         {
             bw.HoldOnion();
+        }
+
+        /// <summary>
+        /// Method when done button is clicked
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
+        public void OnClickDone(object sender, RoutedEventArgs args)
+        {
+            if (combo != null)
+            {
+                NavigationService.Navigate(new CustomizeCombo(combo));
+            }
+            else
+            {
+                NavigationService.Navigate(new MenuCategorySelection());
+            }
         }
     }
 }

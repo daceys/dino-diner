@@ -38,7 +38,7 @@ namespace PointOfSale
         }
 
         /// <summary>
-        /// Constructor  for the current side selection
+        /// Constructor for the current side selection
         /// </summary>
         /// <param name="side">current side</param>
         public SideSelection(Side side)
@@ -47,6 +47,10 @@ namespace PointOfSale
             this.side = side;
         }
 
+        /// <summary>
+        /// Constructor for when sent from the combo page
+        /// </summary>
+        /// <param name="combo"></param>
         public SideSelection(CretaceousCombo combo)
         {
             InitializeComponent();

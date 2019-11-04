@@ -21,5 +21,6 @@
         </Grid.ColumnDefinitions>
         <Button Click="OnHoldPeanutButter">Hold Peanut Butter</Button>
         <Button Click="OnHoldJelly" Grid.Column="1">Hold Jelly</Button>
+        <Button Margin="10" Grid.Row="2" Grid.Column="2" Click="OnClickDone">Done</Button>
     </Grid>
 </Page>

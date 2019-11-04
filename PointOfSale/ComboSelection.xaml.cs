@@ -56,7 +56,7 @@ namespace PointOfSale
             {
                 combo = new CretaceousCombo(new Brontowurst());
                 order.Add(combo);
-                NavigationService.Navigate(new CustomizeCombo(combo));
+                NavigationService.Navigate(new CustomizeBrontowurst(combo));
             }
         }
 
@@ -71,7 +71,7 @@ namespace PointOfSale
             {
                 combo = new CretaceousCombo(new DinoNuggets());
                 order.Add(combo);
-                NavigationService.Navigate(new CustomizeCombo(combo));
+                NavigationService.Navigate(new CustomizeDinoNugget(combo));
             }
         }
 
@@ -86,7 +86,7 @@ namespace PointOfSale
             {
                 combo = new CretaceousCombo(new PrehistoricPBJ());
                 order.Add(combo);
-                NavigationService.Navigate(new CustomizeCombo(combo));
+                NavigationService.Navigate(new CustomizePrehistoricPBJ(combo));
             }
         }
 
@@ -116,7 +116,7 @@ namespace PointOfSale
             {
                 combo = new CretaceousCombo(new SteakosaurusBurger());
                 order.Add(combo);
-                NavigationService.Navigate(new CustomizeCombo(combo));
+                NavigationService.Navigate(new CustomizeSteakosaurusBurger(combo));
             }
         }
 
@@ -131,7 +131,7 @@ namespace PointOfSale
             {
                 combo = new CretaceousCombo(new TRexKingBurger());
                 order.Add(combo);
-                NavigationService.Navigate(new CustomizeCombo(combo));
+                NavigationService.Navigate(new CustomizeTRexKingBurger(combo));
             }
         }
 
@@ -146,7 +146,7 @@ namespace PointOfSale
             {
                 combo = new CretaceousCombo(new VelociWrap());
                 order.Add(combo);
-                NavigationService.Navigate(new CustomizeCombo(combo));
+                NavigationService.Navigate(new CustomizeVelociWrap(combo));
             }
         }
     }

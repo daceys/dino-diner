@@ -22,5 +22,6 @@
         <Button Margin="10" Click="OnHoldDressing">Hold Dressing</Button>
         <Button Margin="10" Grid.Column="1" Click="OnHoldLettuce">Hold Lettuce</Button>
         <Button Margin="10" Grid.Column="2" Click="OnHoldCheese">Hold Cheese</Button>
+        <Button Margin="10" Grid.Row="2" Grid.Column="2" Click="OnClickDone">Done</Button>
     </Grid>
 </Page>

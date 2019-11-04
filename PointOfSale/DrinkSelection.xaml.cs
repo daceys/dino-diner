@@ -77,6 +77,10 @@ namespace PointOfSale
             InitializeComponent();
             this.combo = combo;
             this.drink = combo.Drink;
+            Lemon.IsEnabled = false;
+            Flavor.IsEnabled = false;
+            SweetDecaf.IsEnabled = false;
+            HoldIce.IsEnabled = false;
         }
 
         /// <summary>
@@ -188,6 +192,17 @@ namespace PointOfSale
         /// <param name="args"></param>
         private void OnSweetDecaf(object sender, RoutedEventArgs args)
         {
+            if (combo != null)
+            {
+                if (drink is Tyrannotea t)
+                {
+                    t.Sweet = true;
+                }
+                if (drink is JurassicJava j)
+                {
+                    j.Decaf = true;
+                }
+            }
             if (drink is Tyrannotea tea)
             {
                 tea.Sweet = true;

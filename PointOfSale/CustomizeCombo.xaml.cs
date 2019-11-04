@@ -71,7 +71,7 @@ namespace PointOfSale
             {
                 combo.Size = (DDSize)Enum.Parse(typeof(DDSize), element.Tag.ToString());
             }
-            NavigationService.GoBack();
+            NavigationService.Navigate(new MenuCategorySelection());
         }
     }
 }

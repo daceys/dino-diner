@@ -26,6 +26,7 @@ namespace PointOfSale
     {
         // Backing variable
         private DinoNuggets nugget;
+        private CretaceousCombo combo;
 
         /// <summary>
         /// Constructor for the dino nugget customize page
@@ -37,6 +38,13 @@ namespace PointOfSale
             this.nugget = nugget;
         }
 
+        public CustomizeDinoNugget(CretaceousCombo combo)
+        {
+            InitializeComponent();
+            this.combo = combo;
+            this.nugget = combo.Entree as DinoNuggets;
+        }
+
         /// <summary>
         /// Method to add a nugget to the dino nuggets order
         /// </summary>
@@ -45,6 +53,23 @@ namespace PointOfSale
         private void OnAddNugget(object sender, RoutedEventArgs args)
         {
             nugget.AddNugget();
+        }
+
+        /// <summary>
+        /// Method when done button is clicked
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
+        public void OnClickDone(object sender, RoutedEventArgs args)
+        {
+            if (combo != null)
+            {
+                NavigationService.Navigate(new CustomizeCombo(combo));
+            }
+            else
+            {
+                NavigationService.Navigate(new MenuCategorySelection());
+            }
         }
     }
 }

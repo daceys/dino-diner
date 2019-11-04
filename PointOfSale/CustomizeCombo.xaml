@@ -12,7 +12,7 @@
         <Grid.Resources>
             <Style TargetType="Button">
                 <Setter Property="Width" Value="200"/>
-                <Setter Property="Height" Value="95"/>
+                <Setter Property="Height" Value="90"/>
                 <Setter Property="Margin" Value="15"/>
             </Style>
         </Grid.Resources>

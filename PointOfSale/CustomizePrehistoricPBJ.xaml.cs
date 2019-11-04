@@ -26,6 +26,7 @@ namespace PointOfSale
     {
         // Backing variable
         private PrehistoricPBJ pbj;
+        private CretaceousCombo combo;
 
         /// <summary>
         /// Constructor for the customize prehistoric pbj page
@@ -35,6 +36,17 @@ namespace PointOfSale
         {
             InitializeComponent();
             this.pbj = pbj;
+        }
+
+        /// <summary>
+        /// Constructor for when a combo
+        /// </summary>
+        /// <param name="combo"></param>
+        public CustomizePrehistoricPBJ(CretaceousCombo combo)
+        {
+            InitializeComponent();
+            this.combo = combo;
+            this.pbj = combo.Entree as PrehistoricPBJ;
         }
 
         /// <summary>
@@ -55,6 +67,23 @@ namespace PointOfSale
         private void OnHoldJelly(object sender, RoutedEventArgs args)
         {
             pbj.HoldJelly();
+        }
+
+        /// <summary>
+        /// Method when done button is clicked
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
+        public void OnClickDone(object sender, RoutedEventArgs args)
+        {
+            if (combo != null)
+            {
+                NavigationService.Navigate(new CustomizeCombo(combo));
+            }
+            else
+            {
+                NavigationService.Navigate(new MenuCategorySelection());
+            }
         }
     }
 }
