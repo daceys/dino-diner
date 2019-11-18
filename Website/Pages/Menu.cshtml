@@ -1,5 +1,6 @@
 ﻿@page
 @model Website.Pages.MenuModel
+@using DinoDiner.Menu
 @{
     ViewData["Title"] = "Menu";
 }
@@ -8,16 +9,48 @@
 
 <div class="menu-item">
 
-	<h2>Combos</h2>
-	<div class="combo"/>
+    <h2>Combos</h2>
+    @foreach (CretaceousCombo combo in Model.menu.AvailableCombos)
+    {
+        <div>
+            <h3>@combo</h3>
+            <h4>Price: $@combo.Price</h4>
+            <h4>Calories: @combo.Calories</h4>
+            <h4>Ingredients: @combo.Ingredients</h4>
+        </div>
+    }
 
-	<h2>Entrees</h2>
-	<div class="entree"/>
+    <h2>Entrees</h2>
+    @foreach (Entree entree in Model.menu.AvailableEntrees)
+    {
+        <div>
+            <h3>@entree</h3>
+            <h4>Price: $@entree.Price</h4>
+            <h4>Calories: @entree.Calories</h4>
+            <h4>Ingredients: @entree.Ingredients</h4>
+        </div>
+    }
 
-	<h2>Sides</h2>
-	<div class="sides"/>
+    <h2>Sides</h2>
+    @foreach (Side side in Model.menu.AvailableSides)
+    {
+        <div>
+            <h3>@side</h3>
+            <h4>Price: $@side.Price</h4>
+            <h4>Calories: @side.Calories</h4>
+            <h4>Ingredients: @side.Ingredients</h4>
+        </div>
+    }
 
-	<h2>Drinks</h2>
-	<div class="drinks"/>
+    <h2>Drinks</h2>
+    @foreach (Drink drink in Model.menu.AvailableDrinks)
+    {
+        <div>
+            <h3>@drink</h3>
+            <h4>Price: $@drink.Price</h4>
+            <h4>Calories: @drink.Calories</h4>
+            <h4>Ingredients: @drink.Ingredients</h4>
+        </div>
+    }
 
 </div>

@@ -10,14 +10,11 @@ namespace Website.Pages
 {
     public class MenuModel : PageModel
     {
-        public Entree entree;
-        //public Drink drink;
-        //public Side side;
-        //public CretaceousCombo combo;
+        public Menu menu = new Menu();
 
         public void OnGet()
         {
-
+            
         }
     }
 }
