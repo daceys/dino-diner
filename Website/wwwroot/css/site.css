@@ -12,3 +12,29 @@ body {
     padding-right: 15px;
 }
 
+.menu-item {
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+}
+
+form {
+    width: 300px;
+    background-color: lightgray;
+    flex-grow: 0;
+    padding: 50px
+}
+
+.menu-category {
+    display: flex;
+    flex-direction: column;
+}
+
+.filter-price {
+    display: flex;
+    flex-direction: column;
+}
+
+.menu-list {
+    width: 400px;
+}

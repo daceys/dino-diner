@@ -27,6 +27,8 @@ namespace DinoDiner.Menu
         /// </summary>
         public List<string> Ingredients { get; }
 
+        public List<string> PossibleIngredients { get; }
+
         /// <summary>
         /// List with all the available menu items
         /// </summary>

@@ -12,9 +12,30 @@ namespace Website.Pages
     {
         public Menu menu = new Menu();
 
+        public List<IMenuItem> Item;
+
+        [BindProperty]
+        public List<string> menuCategory { get; set; } = new List<string>();
+
+        [BindProperty]
+        public float? minimumPrice { get; set; }
+
+        [BindProperty]
+        public float? maximumPrice { get; set; }
+
         public void OnGet()
         {
             
+        }
+
+        public void OnPost()
+        {
+            Item = menu.AvailableMenuItems;
+
+            if (minimumPrice != null)
+            {
+
+            }
         }
     }
 }
