@@ -27,7 +27,18 @@ namespace DinoDiner.Menu
         /// </summary>
         public List<string> Ingredients { get; }
 
-        public List<string> PossibleIngredients { get; }
+        /// <summary>
+        /// Get a list of possible ingredients
+        /// </summary>
+        public HashSet<string> PossibleIngredients
+        {
+            get
+            {
+                HashSet<string> items = new HashSet<string>();
+                items.Add(new Brontowurst().Ingredients.ToString());
+                return items;
+            }
+        }
 
         /// <summary>
         /// List with all the available menu items
