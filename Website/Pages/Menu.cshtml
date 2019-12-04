@@ -11,7 +11,7 @@
     <div class="menu-list">
         @if (Model.menuCategory.Contains("combo") || Model.menuCategory.Count == 0)
         {
-            <h2>Combos</h2>
+            <h2>Cretaceous Combos</h2>
             @foreach (CretaceousCombo combo in Model.menu.AvailableCombos)
             {
                 @if ((Model.minimumPrice != null && combo.Price >= Model.minimumPrice) || Model.minimumPrice == null)

@@ -12,7 +12,7 @@ namespace Website.Pages
     {
         public Menu menu = new Menu();
 
-        public List<IMenuItem> Item;
+        public IEnumerable<IMenuItem> Item;
 
         [BindProperty]
         public List<string> menuCategory { get; set; } = new List<string>();
@@ -31,6 +31,8 @@ namespace Website.Pages
         public void OnPost()
         {
             Item = menu.AvailableMenuItems;
+
+
 
             if (minimumPrice != null)
             {
