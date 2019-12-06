@@ -15,6 +15,9 @@ namespace Website.Pages
         public IEnumerable<IMenuItem> Item;
 
         [BindProperty]
+        public string search{ get; set; }
+
+        [BindProperty]
         public List<string> menuCategory { get; set; } = new List<string>();
 
         [BindProperty]

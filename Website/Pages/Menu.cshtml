@@ -12,112 +12,98 @@
         @if (Model.menuCategory.Contains("combo") || Model.menuCategory.Count == 0)
         {
             <h2>Cretaceous Combos</h2>
-            @foreach (CretaceousCombo combo in Model.menu.AvailableCombos)
+            @foreach (CretaceousCombo combo in Model.menu.AvailableCombos
+                /*.Where(combo => (Model.search != null && combo.Entree.Description.Contains(Model.search, StringComparison.OrdinalIgnoreCase)) || Model.search == null)*/
+                .Where(combo => (Model.minimumPrice != null && combo.Price >= Model.minimumPrice) || Model.minimumPrice == null)
+                .Where(combo => (Model.maximumPrice != null && combo.Price <= Model.maximumPrice) || Model.maximumPrice == null))
             {
-                @if ((Model.minimumPrice != null && combo.Price >= Model.minimumPrice) || Model.minimumPrice == null)
-                {
-                    @if ((Model.maximumPrice != null && combo.Price <= Model.maximumPrice) || Model.maximumPrice == null)
+                <div>
+                    <h3>@combo</h3>
+                    <h4>Price: $@combo.Price</h4>
+                    <h4>Calories: @combo.Calories</h4>
+                    <h4>Ingredients:</h4>
+                    @foreach (string ingredient in @combo.Ingredients)
                     {
                         <div>
-                            <h3>@combo</h3>
-                            <h4>Price: $@combo.Price</h4>
-                            <h4>Calories: @combo.Calories</h4>
-                            <h4>Ingredients:</h4>
-                            @foreach (string ingredient in @combo.Ingredients)
-                            {
-                                <div>
-                                    @ingredient.ToString()
-                                </div>
-                            }
+                            @ingredient.ToString()
                         </div>
                     }
-                }
+                </div>
             }
         }
 
         @if (Model.menuCategory.Contains("entree") || Model.menuCategory.Count == 0)
         {
             <h2>Entrees</h2>
-            @foreach (Entree entree in Model.menu.AvailableEntrees)
+            @foreach (Entree entree in Model.menu.AvailableEntrees
+                .Where(entree => (Model.minimumPrice != null && entree.Price >= Model.minimumPrice) || Model.minimumPrice == null)
+                .Where(entree => (Model.maximumPrice != null && entree.Price <= Model.maximumPrice) || Model.maximumPrice == null))
             {
-                @if ((Model.minimumPrice != null && entree.Price >= Model.minimumPrice) || Model.minimumPrice == null)
-                {
-                    @if ((Model.maximumPrice != null && entree.Price <= Model.maximumPrice) || Model.maximumPrice == null)
+                <div>
+                    <h3>@entree</h3>
+                    <h4>Price: $@entree.Price</h4>
+                    <h4>Calories: @entree.Calories</h4>
+                    <h4>Ingredients:</h4>
+                    @foreach (string ingredient in @entree.Ingredients)
                     {
                         <div>
-                            <h3>@entree</h3>
-                            <h4>Price: $@entree.Price</h4>
-                            <h4>Calories: @entree.Calories</h4>
-                            <h4>Ingredients:</h4>
-                            @foreach (string ingredient in @entree.Ingredients)
-                            {
-                                <div>
-                                    @ingredient.ToString()
-                                </div>
-                            }
+                            @ingredient.ToString()
                         </div>
                     }
-                }
+                </div>
             }
+            
         }
 
 
         @if (Model.menuCategory.Contains("side") || Model.menuCategory.Count == 0)
         {
             <h2>Sides</h2>
-            @foreach (Side side in Model.menu.AvailableSides)
+            @foreach (Side side in Model.menu.AvailableSides
+                .Where(side => (Model.minimumPrice != null && side.Price >= Model.minimumPrice) || Model.minimumPrice == null)
+                .Where(side => (Model.maximumPrice != null && side.Price <= Model.maximumPrice) || Model.maximumPrice == null))
             {
-                @if ((Model.minimumPrice != null && side.Price >= Model.minimumPrice) || Model.minimumPrice == null)
-                {
-                    @if ((Model.maximumPrice != null && side.Price <= Model.maximumPrice) || Model.maximumPrice == null)
+                <div>
+                    <h3>@side</h3>
+                    <h4>Price: $@side.Price</h4>
+                    <h4>Calories: @side.Calories</h4>
+                    <h4>Ingredients:</h4>
+                    @foreach (string ingredient in @side.Ingredients)
                     {
                         <div>
-                            <h3>@side</h3>
-                            <h4>Price: $@side.Price</h4>
-                            <h4>Calories: @side.Calories</h4>
-                            <h4>Ingredients:</h4>
-                            @foreach (string ingredient in @side.Ingredients)
-                            {
-                                <div>
-                                    @ingredient.ToString()
-                                </div>
-                            }
+                            @ingredient.ToString()
                         </div>
                     }
-                }
+                </div>
             }
         }
 
         @if (Model.menuCategory.Contains("drink") || Model.menuCategory.Count == 0)
         {
             <h2>Drinks</h2>
-            @foreach (Drink drink in Model.menu.AvailableDrinks)
+            @foreach (Drink drink in Model.menu.AvailableDrinks
+                .Where(drink => (Model.minimumPrice != null && drink.Price >= Model.minimumPrice) || Model.minimumPrice == null)
+                .Where(drink => (Model.maximumPrice != null && drink.Price <= Model.maximumPrice) || Model.maximumPrice == null))
             {
-                @if ((Model.minimumPrice != null && drink.Price >= Model.minimumPrice) || Model.minimumPrice == null)
-                {
-                    @if ((Model.maximumPrice != null && drink.Price <= Model.maximumPrice) || Model.maximumPrice == null)
+                <div>
+                    <h3>@drink</h3>
+                    <h4>Price: $@drink.Price</h4>
+                    <h4>Calories: @drink.Calories</h4>
+                    <h4>Ingredients:</h4>
+                    @foreach (string ingredient in @drink.Ingredients)
                     {
                         <div>
-                            <h3>@drink</h3>
-                            <h4>Price: $@drink.Price</h4>
-                            <h4>Calories: @drink.Calories</h4>
-                            <h4>Ingredients:</h4>
-                            @foreach (string ingredient in @drink.Ingredients)
-                            {
-                                <div>
-                                    @ingredient.ToString()
-                                </div>
-                            }
+                            @ingredient.ToString()
                         </div>
-                     }
-                 }
-             }
+                    }
+                </div>
+            }
          }
     </div>
 
     <form method="post">
         <h3>Search</h3>
-        <input type="text" name="search" id="search" />
+        <input type="text" name="search" id="search" value="@Model.search"/>
         <input type="submit" value="Search" />
 
         <input type="submit" name="filter" id="filter" value="Apply Filter(s)" />
