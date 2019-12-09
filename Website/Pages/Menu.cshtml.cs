@@ -33,14 +33,7 @@ namespace Website.Pages
 
         public void OnPost()
         {
-            Item = menu.AvailableMenuItems;
-
-
-
-            if (minimumPrice != null)
-            {
-
-            }
+            
         }
     }
 }
